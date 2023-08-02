@@ -1,0 +1,14 @@
+login to ec2 instance run below commands 
+port : 9090
+
+
+git clone https://github.com/rohithk2301/apm-tutorial-python.git
+
+sudo apt update
+sudo apt install python3-pip
+pip3 install flask
+  
+cd apm-tutorial-python/calendar_app/
+python3 app.py
+
+  
