@@ -12,3 +12,16 @@ cd apm-tutorial-python/calendar_app/
 python3 app.py
 
   
+sudo lsof -i:9090
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+python3 3073 ubuntu    3u  IPv4  30149      0t0  TCP *:9090 (LISTEN)
+python3 3074 ubuntu    3u  IPv4  30149      0t0  TCP *:9090 (LISTEN)
+python3 3074 ubuntu    4u  IPv4  30149      0t0  TCP *:9090 (LISTEN)
+
+ubuntu@ip-172-31-37-119:~/apm-tutorial-python/calendar_app$ sudo kill -9 3073
+[1]+  Killed                  python3 app.py
+
+ubuntu@ip-172-31-37-119:~/apm-tutorial-python/calendar_app$ sudo kill -9 3074
+kill: (3074): No such process
+
+ubuntu@ip-172-31-37-119:~/apm-tutorial-python/calendar_app$ sudo lsof -i:9090
